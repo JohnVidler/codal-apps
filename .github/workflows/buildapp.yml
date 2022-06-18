@@ -15,6 +15,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }}, gcc ${{ matrix.gcc }}, cmake ${{ matrix.cmake || 'latest'}}, target ${{ matrix.target }}
     steps:
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ github.ref }}
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -41,5 +44,6 @@ jobs:
           python ./build.py
       - uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
+          name: MICROBIT-${{ matrix.target }}-${{ matrix.os }}-${{ matrix.gcc }}-cmake-${{ matrix.cmake || 'latest'}}.hex
           path: MICROBIT.hex
+          retention-days: 30
