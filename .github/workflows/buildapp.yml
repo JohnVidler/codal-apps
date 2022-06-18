@@ -1,4 +1,4 @@
-name: Build App - bug/audio-freezes
+name: Build App
 
 on:
   push
