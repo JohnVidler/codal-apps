@@ -44,5 +44,6 @@ jobs:
           python ./build.py
       - uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
+          name: MICROBIT-${{ matrix.target }}-${{ matrix.os }}-${{ matrix.gcc }}-cmake-${{ matrix.cmake || 'latest'}}.hex
           path: MICROBIT.hex
+          retention-days: 30
