@@ -1,4 +1,4 @@
-# codal-apps# CODAL-apps - Various apps for demo and debugging
+# CODAL-apps - Various apps for demo and debugging
 
 A set of apps, written for testing CODAL, or bugs therein.
 
